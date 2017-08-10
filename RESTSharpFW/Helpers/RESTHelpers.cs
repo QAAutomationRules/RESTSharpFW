@@ -15,7 +15,7 @@ namespace RESTSharpFW.Helpers
             var client = new RestClient(url);
             // client.Authenticator = new HttpBasicAuthenticator(username, password);
 
-            var request = new RestRequest("resource/{id}", Method.POST);
+            var request = new RestRequest("resource/{id}", Method.GET);
 
             // execute the request
             IRestResponse response = client.Execute(request);
@@ -29,7 +29,7 @@ namespace RESTSharpFW.Helpers
             var client = new RestClient(url);
             // client.Authenticator = new HttpBasicAuthenticator(username, password);
 
-            var request = new RestRequest("resource/{id}", Method.POST);
+            var request = new RestRequest("resource/{id}", Method.PUT);
 
             // execute the request
             IRestResponse response = client.Execute(request);
@@ -57,7 +57,7 @@ namespace RESTSharpFW.Helpers
             var client = new RestClient(url);
             // client.Authenticator = new HttpBasicAuthenticator(username, password);
 
-            var request = new RestRequest("resource/{id}", Method.POST);
+            var request = new RestRequest("resource/{id}", Method.DELETE);
             
             // execute the request
             IRestResponse response = client.Execute(request);
