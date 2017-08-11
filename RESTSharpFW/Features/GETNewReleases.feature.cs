@@ -17,22 +17,22 @@ namespace RESTSharpFW.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("SpotifyAccountsAPI", Description="\tIn order to get API Tokens\r\n\tAs a Spotify API user\r\n\tI want to be able to use th" +
-        "e Accounts API to get Authorization Tokens", SourceFile="Features\\SpotifyAccountsAPI.feature", SourceLine=0)]
-    public partial class SpotifyAccountsAPIFeature
+    [TechTalk.SpecRun.FeatureAttribute("GET New Releases", Description="\tIn order to get new release music\r\n\tAs a Spotify customer\r\n\tI want to be able to" +
+        " retrieve new releases", SourceFile="Features\\GETNewReleases.feature", SourceLine=0)]
+    public partial class GETNewReleasesFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SpotifyAccountsAPI.feature"
+#line 1 "GETNewReleases.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpotifyAccountsAPI", "\tIn order to get API Tokens\r\n\tAs a Spotify API user\r\n\tI want to be able to use th" +
-                    "e Accounts API to get Authorization Tokens", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GET New Releases", "\tIn order to get new release music\r\n\tAs a Spotify customer\r\n\tI want to be able to" +
+                    " retrieve new releases", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -63,16 +63,28 @@ namespace RESTSharpFW.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Accounts API Returns OAuth Token", new string[] {
-                "Accounts"}, SourceLine=6)]
-        public virtual void AccountsAPIReturnsOAuthToken()
+        public virtual void FeatureBackground()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts API Returns OAuth Token", new string[] {
-                        "Accounts"});
+#line 6
 #line 7
-this.ScenarioSetup(scenarioInfo);
-#line 8
  testRunner.Given("I get a valid token back from the Accounts API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("GET the list of New Releases on Spotify", new string[] {
+                "SpotifyAPI"}, SourceLine=9)]
+        public virtual void GETTheListOfNewReleasesOnSpotify()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GET the list of New Releases on Spotify", new string[] {
+                        "SpotifyAPI"});
+#line 10
+this.ScenarioSetup(scenarioInfo);
+#line 6
+this.FeatureBackground();
+#line 11
+ testRunner.Given("I execute a GET New Releases Request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+ testRunner.Then("the New Release Json is returned from the Spotify API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

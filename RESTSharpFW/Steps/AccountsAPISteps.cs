@@ -6,22 +6,35 @@ using System.Text;
 using RestSharp;
 using RESTSharpFW.Helpers;
 using TechTalk.SpecFlow;
+using FluentAssertions;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using RESTSharpFW.Data;
 
 namespace RESTSharpFW.Steps
 {
-    [Binding]
+    
+
+[Binding]
     public sealed class AccountsAPISteps
     {
-        [Given(@"I create a valid POST request to use against the Accounts API")]
-        public void GivenICreateAValidPOSTRequestToUseAgainstTheAccountsAPI()
+        
+
+        [Given(@"I get a valid token back from the Accounts API")]
+        public void GivenIGetAValidTokenBackFromTheAccountsAPI()
         {
-            IRestResponse response = RESTHelpers.POSTNoAuth(ConfigurationManager.AppSettings["AccountsAPIURL"],
-                ConfigurationManager.AppSettings["TokenResource"], "grant_type=client_credentials&client_id=" + 
-                ConfigurationManager.AppSettings["ClientID"] + "&client_secret=" + ConfigurationManager.AppSettings["ClientSecret"]);
-            
-            ScenarioContext.Current.Set("AccountToken", response.Content);
+            IRestResponse response = RESTHelpers.POSTNoAuth(
+               ConfigurationManager.AppSettings["AccountsAPIURL"].ToString(),
+               ConfigurationManager.AppSettings["TokenResource"].ToString(),
+               ConfigurationManager.AppSettings["ClientID"].ToString(),
+               ConfigurationManager.AppSettings["ClientSecret"].ToString());
+
+            var accessToken = JsonConvert.DeserializeObject<AccessToken>(response.Content);
+
+            ScenarioContext.Current.Set<string>("AccountToken", accessToken.Access_Token);
 
         }
+
 
     }
 }

@@ -5,6 +5,5 @@
 
 @Accounts
 Scenario: Accounts API Returns OAuth Token
-	Given I create a valid POST request to use against the Accounts API
-	When I execute the POST Request
-	Then the OAUTH Token is returned
+	Given I get a valid token back from the Accounts API
+	

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Authenticators;
+using FluentAssertions;
 
 namespace RESTSharpFW.Helpers
 {
@@ -39,7 +40,21 @@ namespace RESTSharpFW.Helpers
 
         }
 
+        public static IRestResponse GETWithOAUTH(string url, string resource,
+            string token)
+        {
+            var client = new RestClient(url);
+            
+            var request = new RestRequest(resource, Method.GET);
 
+            request.AddParameter("Authorization", "Bearer " + token);
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
         public static IRestResponse PUTNoAuth(string url, string resource, string body)
         {
             var client = new RestClient(url);
@@ -69,15 +84,45 @@ namespace RESTSharpFW.Helpers
 
         }
 
-        public static IRestResponse POSTNoAuth(string url, string resource, string body)
+        public static IRestResponse POSTNoAuth(string url, string resource,
+            string clientID = "", string clientSecret = "")
         {
             var client = new RestClient(url);
             
             var request = new RestRequest(resource, Method.POST);
-            request.AddBody(body);
+            request.AddParameter("grant_type", "client_credentials");
+
+            if (clientID != "" || clientSecret != "")
+            {
+                request.AddParameter("client_id", clientID);
+                request.AddParameter("client_secret", clientSecret);
+            }
 
             // execute the request
             IRestResponse response = client.Execute(request);
+
+            response.Should().NotBeNull();
+            response.StatusDescription.Should().Be("OK");
+
+            return response;
+
+        }
+
+        public static IRestResponse POSTWithOAUTHToken(string url, string resource, string token)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource, Method.POST);
+            request.AddParameter("grant_type", "client_credentials");
+
+            //OAUTH Token
+            request.AddParameter("Authorization", "Bearer " + token);
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            response.Should().NotBeNull();
+            response.StatusDescription.Should().Be("OK");
 
             return response;
 
