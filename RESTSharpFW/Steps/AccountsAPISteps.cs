@@ -15,6 +15,7 @@ namespace RESTSharpFW.Steps
         [Given(@"I create a valid POST request to use against the Accounts API")]
         public void GivenICreateAValidPOSTRequestToUseAgainstTheAccountsAPI()
         {
+
             IRestResponse response = RESTHelpers.POSTNoAuth(ConfigurationManager.AppSettings["AccountsAPIURL"],
                 ConfigurationManager.AppSettings["TokenResource"], "grant_type=client_credentials&client_id=" + 
                 ConfigurationManager.AppSettings["ClientID"] + "&client_secret=" + ConfigurationManager.AppSettings["ClientSecret"]);
