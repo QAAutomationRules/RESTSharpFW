@@ -31,7 +31,7 @@ namespace RESTSharpFW.Steps
 
             var accessToken = JsonConvert.DeserializeObject<AccessToken>(response.Content);
 
-            ScenarioContext.Current.Set<string>("AccountToken", accessToken.Access_Token);
+            ScenarioContext.Current.Set(accessToken.Access_Token, "AccountToken");
 
         }
 

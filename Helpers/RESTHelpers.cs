@@ -47,7 +47,7 @@ namespace RESTSharpFW.Helpers
             
             var request = new RestRequest(resource, Method.GET);
 
-            request.AddParameter("Authorization", "Bearer " + token);
+            request.AddHeader("Authorization", "Bearer " + token);
 
             // execute the request
             IRestResponse response = client.Execute(request);
@@ -55,6 +55,7 @@ namespace RESTSharpFW.Helpers
             return response;
 
         }
+
         public static IRestResponse PUTNoAuth(string url, string resource, string body)
         {
             var client = new RestClient(url);
