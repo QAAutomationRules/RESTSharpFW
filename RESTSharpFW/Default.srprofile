@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TestProfile xmlns="http://www.specflow.org/schemas/plus/TestProfile/1.5">
   <Settings projectName="RESTSharpFW" projectId="{366fab1f-58c7-4a20-8870-d9abe4e65837}" />
-  <Execution retryFor="None" stopAfterFailures="100" testThreadCount="1" testSchedulingMode="Sequential" />
+  <Execution retryFor="None" stopAfterFailures="0" testThreadCount="1" testSchedulingMode="Sequential" />
   <!-- For collecting by a SpecRun server update and enable the following element. For using the 
       collected statistics, set testSchedulingMode="Adaptive" attribute on the <Execution> element.
     <Server serverUrl="http://specrunserver:6365" publishResults="true" />
