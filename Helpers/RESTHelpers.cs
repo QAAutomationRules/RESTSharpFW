@@ -171,7 +171,6 @@ namespace RESTSharpFW.Helpers
 
         }
 
- 
 
         public static void IsValidOKResponse(IRestResponse response)
         {
@@ -239,7 +238,13 @@ namespace RESTSharpFW.Helpers
 
         public static void CompareJSON(string JSONFromAPI, string JSONFile)
         {
+            //write the response JSON to the Console
             Console.WriteLine(ScenarioContext.Current.Get<string>(JSONFromAPI));
+
+            //Parse the JSON response to a JObject
+            JObject jobjReturnedFromAPI = JObject.Parse(ScenarioContext.Current.Get<string>(JSONFromAPI));
+
+            //Parse the JSON file to a JObject
             JObject jobjFromJSONFile;
 
             var dir = Environment.CurrentDirectory;
@@ -249,8 +254,6 @@ namespace RESTSharpFW.Helpers
                 var reader = new JsonTextReader(sr);
                 jobjFromJSONFile = JObject.Load(reader);
             }
-
-            JObject jobjReturnedFromAPI = JObject.Parse(ScenarioContext.Current.Get<string>(JSONFromAPI));
 
             JToken.DeepEquals(jobjReturnedFromAPI, jobjFromJSONFile).Should().BeTrue();
         }
