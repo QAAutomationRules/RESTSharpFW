@@ -199,11 +199,14 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SpotifyAccountsAPI.feature.cs</LastGenOutput>
     </None>
+    <None Include="JSONFiles\AlbumsJSON.json" />
     <None Include="JSONFiles\ArtistsJSON.json" />
     <None Include="JSONFiles\CategoriesJSON.json" />
     <None Include="JSONFiles\NewReleases.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="JSONFiles\PlayListJSON.json" />
+    <None Include="JSONFiles\TracksJSON.json" />
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">
