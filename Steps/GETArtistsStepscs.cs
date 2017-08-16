@@ -19,7 +19,7 @@ namespace RESTSharpFW.Steps
                ConfigurationManager.AppSettings["ArtistsResource"].ToString(),
                ScenarioContext.Current.Get<string>("AccountToken"));
 
-            RESTHelpers.ValidResponse(response);
+            RESTHelpers.IsValidOKResponse(response);
 
             ScenarioContext.Current.Add("ArtistsJSON", response.Content);
         }

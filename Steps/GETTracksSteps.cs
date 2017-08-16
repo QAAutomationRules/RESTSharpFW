@@ -19,7 +19,7 @@ namespace RESTSharpFW.Steps
                ConfigurationManager.AppSettings["TracksResource"].ToString(),
                ScenarioContext.Current.Get<string>("AccountToken"));
 
-            RESTHelpers.ValidResponse(response);
+            RESTHelpers.IsValidOKResponse(response);
 
             ScenarioContext.Current.Add("TracksJSON", response.Content);
         }

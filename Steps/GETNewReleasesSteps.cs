@@ -23,7 +23,7 @@ namespace RESTSharpFW.Steps
                ConfigurationManager.AppSettings["NewReleasesResource"].ToString(),
                ScenarioContext.Current.Get<string>("AccountToken"));
 
-            RESTHelpers.ValidResponse(response);
+            RESTHelpers.IsValidOKResponse(response);
 
             ScenarioContext.Current.Add("NewReleaseJSON", response.Content);
         }

@@ -205,7 +205,9 @@
     <None Include="JSONFiles\NewReleases.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSONFiles\PlayListJSON.json" />
+    <None Include="JSONFiles\PlayListJSONResponse.json" />
+    <None Include="JSONFiles\POSTPlayListNOTPublicJSON.json" />
+    <None Include="JSONFiles\POSTPlayListPublicJSON.json" />
     <None Include="JSONFiles\TracksJSON.json" />
     <None Include="packages.config" />
     <None Include="runtests.cmd" />

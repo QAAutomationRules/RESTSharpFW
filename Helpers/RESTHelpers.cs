@@ -89,7 +89,7 @@ namespace RESTSharpFW.Helpers
 
         }
 
-        public static IRestResponse POSTNoAuth(string url, string resource,
+        public static IRestResponse POST(string url, string resource,
             string clientID = "", string clientSecret = "")
         {
             var client = new RestClient(url);
@@ -105,9 +105,6 @@ namespace RESTSharpFW.Helpers
 
             // execute the request
             IRestResponse response = client.Execute(request);
-
-            response.Should().NotBeNull();
-            response.StatusDescription.Should().Be("OK");
 
             return response;
 
@@ -125,9 +122,6 @@ namespace RESTSharpFW.Helpers
 
             // execute the request
             IRestResponse response = client.Execute(request);
-
-            response.Should().NotBeNull();
-            response.StatusDescription.Should().Be("OK");
 
             return response;
 
@@ -177,10 +171,70 @@ namespace RESTSharpFW.Helpers
 
         }
 
-        public static void ValidResponse(IRestResponse response)
+ 
+
+        public static void IsValidOKResponse(IRestResponse response)
         {
             response.Content.Should().NotBeNullOrEmpty();
             response.StatusDescription.Should().Be("OK");
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
+        }
+
+        public static void Is201CreatedResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusDescription.Should().Be("OK");
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
+        }
+
+        public static void Is302FoundResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusDescription.Should().Be("OK");
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.Found);
+        }
+
+        public static void Is302RedirectResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusDescription.Should().Be("OK");
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.Redirect);
+        }
+
+        public static void Is400BadRequestResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
+        }
+
+        public static void Is401UnauthorizedResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.Unauthorized);
+        }
+
+        public static void Is403ForbiddenResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.Forbidden);
+        }
+
+        public static void Is404NotFoundResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.NotFound);
+        }
+
+        public static void Is500InternalServerErrorResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.InternalServerError);
+        }
+
+        public static void Is502BadGatewayResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadGateway);
         }
 
         public static void CompareJSON(string JSONFromAPI, string JSONFile)

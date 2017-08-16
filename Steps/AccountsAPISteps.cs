@@ -23,7 +23,7 @@ namespace RESTSharpFW.Steps
         [Given(@"I get a valid token back from the Accounts API")]
         public void GivenIGetAValidTokenBackFromTheAccountsAPI()
         {
-            IRestResponse response = RESTHelpers.POSTNoAuth(
+            IRestResponse response = RESTHelpers.POST(
                ConfigurationManager.AppSettings["AccountsAPIURL"].ToString(),
                ConfigurationManager.AppSettings["TokenResource"].ToString(),
                ConfigurationManager.AppSettings["ClientID"].ToString(),

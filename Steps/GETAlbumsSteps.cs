@@ -19,7 +19,7 @@ namespace RESTSharpFW.Steps
                ConfigurationManager.AppSettings["AlbumsResource"].ToString(),
                ScenarioContext.Current.Get<string>("AccountToken"));
 
-            RESTHelpers.ValidResponse(response);
+            RESTHelpers.IsValidOKResponse(response);
 
             ScenarioContext.Current.Add("AlbumsJSON", response.Content);
 
