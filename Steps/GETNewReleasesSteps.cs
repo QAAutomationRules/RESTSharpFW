@@ -14,39 +14,25 @@ using TechTalk.SpecFlow;
 namespace RESTSharpFW.Steps
 {
     [Binding]
-    public sealed class GETNewReleases
+    public sealed class GETNewReleasesSteps
     {
-        [Given(@"I execute a GET New Releases Request")]
-        public void GivenIExecuteAGETNewReleasesRequest()
+        [When(@"I execute a GET New Releases Request")]
+        public void WhenIExecuteAGETNewReleasesRequest()
         {
             IRestResponse response = RESTHelpers.GETWithOAUTH(ConfigurationManager.AppSettings["SpotifyURL"].ToString(),
                ConfigurationManager.AppSettings["NewReleasesResource"].ToString(),
                ScenarioContext.Current.Get<string>("AccountToken"));
 
-            response.Content.Should().NotBeNullOrEmpty();
-            response.StatusDescription.Should().Be("OK");
+            RESTHelpers.ValidResponse(response);
 
             ScenarioContext.Current.Add("NewReleaseJSON", response.Content);
         }
 
+
         [Then(@"the New Release Json is returned from the Spotify API")]
         public void ThenTheNewReleaseJsonIsReturnedFromTheSpotifyAPI()
         {
-            Console.WriteLine(ScenarioContext.Current.Get<string>("NewReleaseJSON"));
-            JObject jobj2;
-
-            var dir = Environment.CurrentDirectory;
-
-            using (var sr = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"..\\RESTSharpFW\\JSONFiles\\", "NewReleases.json")))
-            {
-                var reader = new JsonTextReader(sr);
-                jobj2 = JObject.Load(reader);
-            }
-
-            JObject jobj1 = JObject.Parse(ScenarioContext.Current.Get<string>("NewReleaseJSON"));
-
-            JToken.DeepEquals(jobj1, jobj2).Should().BeTrue();
-
+            RESTHelpers.CompareJSON("NewReleaseJSON", "NewReleases.json");
         }
 
     }

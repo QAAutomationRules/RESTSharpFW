@@ -17,22 +17,20 @@ namespace RESTSharpFW.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("GET New Releases", Description="\tIn order to get new release music\r\n\tAs a Spotify customer\r\n\tI want to be able to" +
-        " retrieve new releases", SourceFile="Features\\GETNewReleases.feature", SourceLine=0)]
-    public partial class GETNewReleasesFeature
+    [TechTalk.SpecRun.FeatureAttribute("GET Categories", Description="\tAs a Spotify API Consumer\r\n\tI want to be able to retrieve Music Categories", SourceFile="Features\\GETCategories.feature", SourceLine=0)]
+    public partial class GETCategoriesFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "GETNewReleases.feature"
+#line 1 "GETCategories.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GET New Releases", "\tIn order to get new release music\r\n\tAs a Spotify customer\r\n\tI want to be able to" +
-                    " retrieve new releases", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "GET Categories", "\tAs a Spotify API Consumer\r\n\tI want to be able to retrieve Music Categories", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,14 +69,12 @@ namespace RESTSharpFW.Features
 #line hidden
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("GET the list of New Releases on Spotify", new string[] {
-                "GET",
-                "SpotifyAPI"}, SourceLine=9)]
-        public virtual void GETTheListOfNewReleasesOnSpotify()
+        [TechTalk.SpecRun.ScenarioAttribute("GET Categories request returns Categories JSON from the Spotify API", new string[] {
+                "GET"}, SourceLine=9)]
+        public virtual void GETCategoriesRequestReturnsCategoriesJSONFromTheSpotifyAPI()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GET the list of New Releases on Spotify", new string[] {
-                        "GET",
-                        "SpotifyAPI"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("GET Categories request returns Categories JSON from the Spotify API", new string[] {
+                        "GET"});
 #line 10
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -86,9 +82,9 @@ this.FeatureBackground();
 #line 11
  testRunner.Given("I have a URL to the Spotify API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
- testRunner.When("I execute a GET New Releases Request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I execute the GET Categories API call", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 13
- testRunner.Then("the New Release Json is returned from the Spotify API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the JSON returned matches what is expected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

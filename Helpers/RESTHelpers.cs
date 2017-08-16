@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using RestSharp;
 using RestSharp.Authenticators;
 using FluentAssertions;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using TechTalk.SpecFlow;
 
 namespace RESTSharpFW.Helpers
 {
@@ -171,6 +175,30 @@ namespace RESTSharpFW.Helpers
 
             return response;
 
+        }
+
+        public static void ValidResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusDescription.Should().Be("OK");
+        }
+
+        public static void CompareJSON(string JSONFromAPI, string JSONFile)
+        {
+            Console.WriteLine(ScenarioContext.Current.Get<string>(JSONFromAPI));
+            JObject jobjFromJSONFile;
+
+            var dir = Environment.CurrentDirectory;
+
+            using (var sr = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"..\\RESTSharpFW\\JSONFiles\\", JSONFile)))
+            {
+                var reader = new JsonTextReader(sr);
+                jobjFromJSONFile = JObject.Load(reader);
+            }
+
+            JObject jobjReturnedFromAPI = JObject.Parse(ScenarioContext.Current.Get<string>(JSONFromAPI));
+
+            JToken.DeepEquals(jobjReturnedFromAPI, jobjFromJSONFile).Should().BeTrue();
         }
     }
 }

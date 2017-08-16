@@ -59,6 +59,6 @@ C:\RestSharpFW\RESTSharpFW\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTes
 C:\RestSharpFW\RESTSharpFW\bin\Debug\Newtonsoft.Json.xml
 C:\RestSharpFW\RESTSharpFW\bin\Debug\RestSharp.xml
 C:\RestSharpFW\RESTSharpFW\bin\Debug\de-DE\Faker.NET4.resources.dll
-C:\RestSharpFW\RESTSharpFW\obj\Debug\RESTSharpFW.csprojResolveAssemblyReference.cache
 C:\RestSharpFW\RESTSharpFW\obj\Debug\RESTSharpFW.dll
 C:\RestSharpFW\RESTSharpFW\obj\Debug\RESTSharpFW.pdb
+C:\RestSharpFW\RESTSharpFW\obj\Debug\RESTSharpFW.csprojResolveAssemblyReference.cache

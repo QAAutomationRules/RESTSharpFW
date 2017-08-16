@@ -6,7 +6,8 @@
 Background: Get a Token
 	Given I get a valid token back from the Accounts API
 
-@SpotifyAPI
+@GET @SpotifyAPI
 Scenario: GET the list of New Releases on Spotify
-	Given I execute a GET New Releases Request
+	Given I have a URL to the Spotify API
+	When I execute a GET New Releases Request
 	Then the New Release Json is returned from the Spotify API
