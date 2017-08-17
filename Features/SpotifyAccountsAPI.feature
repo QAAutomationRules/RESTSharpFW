@@ -7,3 +7,6 @@
 Scenario: Accounts API Returns OAuth Token
 	Given I get a valid token back from the Accounts API
 	
+	
+Scenario: Accounts API GET OAUTH for doing stuff
+	Given I get an OAuth Token from the Accounts API

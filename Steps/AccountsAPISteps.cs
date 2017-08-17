@@ -35,6 +35,20 @@ namespace RESTSharpFW.Steps
 
         }
 
+        [Given(@"I get an OAuth Token from the Accounts API")]
+        public void GivenIGetAnOAuthTokenFromTheAccountsAPI()
+        {
+            IRestResponse response = RESTHelpers.GETOAUTH(
+                ConfigurationManager.AppSettings["AccountsAPIURL"].ToString(),
+                ConfigurationManager.AppSettings["AuthorizeResource"].ToString(),
+                ConfigurationManager.AppSettings["ClientID"].ToString());
+
+            //var modifyToken = JsonConvert.DeserializeObject<ModifyToken>(response.Content);
+
+            //ScenarioContext.Current.Set(modifyToken, "ModifyToken");
+        }
+
+
 
     }
 }

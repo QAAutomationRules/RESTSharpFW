@@ -110,6 +110,26 @@ namespace RESTSharpFW.Helpers
 
         }
 
+        public static IRestResponse GETOAUTH(string url, string resource,
+            string clientID)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource, Method.GET);
+
+            request.AddQueryParameter("client_id", clientID);
+            request.AddQueryParameter("redirect_uri", ConfigurationManager.AppSettings["Redirect_URI"]);
+            request.AddQueryParameter("response_type", ConfigurationManager.AppSettings["Response_Type"]);
+            request.AddQueryParameter("scope", ConfigurationManager.AppSettings["Scope"]);
+
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
+
         public static IRestResponse POSTWithOAUTHToken(string url, string resource, string token)
         {
             var client = new RestClient(url);
@@ -182,22 +202,31 @@ namespace RESTSharpFW.Helpers
         public static void Is201CreatedResponse(IRestResponse response)
         {
             response.Content.Should().NotBeNullOrEmpty();
-            response.StatusDescription.Should().Be("OK");
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
+        }
+
+        public static void Is202AcceptedResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.Accepted);
         }
 
         public static void Is302FoundResponse(IRestResponse response)
         {
             response.Content.Should().NotBeNullOrEmpty();
-            response.StatusDescription.Should().Be("OK");
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.Found);
         }
 
         public static void Is302RedirectResponse(IRestResponse response)
         {
             response.Content.Should().NotBeNullOrEmpty();
-            response.StatusDescription.Should().Be("OK");
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.Redirect);
+        }
+
+        public static void Is304NotModifiedResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.NotModified);
         }
 
         public static void Is400BadRequestResponse(IRestResponse response)
@@ -235,6 +264,13 @@ namespace RESTSharpFW.Helpers
             response.Content.Should().NotBeNullOrEmpty();
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadGateway);
         }
+
+        public static void Is503ServiceUnavailableResponse(IRestResponse response)
+        {
+            response.Content.Should().NotBeNullOrEmpty();
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.ServiceUnavailable);
+        }
+
 
         public static void CompareJSON(string JSONFromAPI, string JSONFile)
         {
