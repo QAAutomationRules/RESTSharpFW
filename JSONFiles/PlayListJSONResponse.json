@@ -1,3 +1,37 @@
 ﻿{
-
+  "collaborative": false,
+  "description": "New playlist description 11",
+  "external_urls": {
+    "spotify": "http://open.spotify.com/user/avzrule/playlist/2dRKplpvEJUJkwVI0I7XA7"
+  },
+  "followers": {
+    "href": null,
+    "total": 0
+  },
+  "href": "https://api.spotify.com/v1/users/avzrule/playlists/2dRKplpvEJUJkwVI0I7XA7",
+  "id": "2dRKplpvEJUJkwVI0I7XA7",
+  "images": [],
+  "name": "New Playlist11",
+  "owner": {
+    "external_urls": {
+      "spotify": "http://open.spotify.com/user/avzrule"
+    },
+    "href": "https://api.spotify.com/v1/users/avzrule",
+    "id": "avzrule",
+    "type": "user",
+    "uri": "spotify:user:avzrule"
+  },
+  "public": true,
+  "snapshot_id": "DVpXrTld/Fj290mdF2VgfTXUnixbN47OwkPggEDbN6fMzxOK7fDq2ZIRt8ftEpgh",
+  "tracks": {
+    "href": "https://api.spotify.com/v1/users/avzrule/playlists/2dRKplpvEJUJkwVI0I7XA7/tracks",
+    "items": [],
+    "limit": 100,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 0
+  },
+  "type": "playlist",
+  "uri": "spotify:user:avzrule:playlist:2dRKplpvEJUJkwVI0I7XA7"
 }

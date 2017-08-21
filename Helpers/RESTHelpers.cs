@@ -11,6 +11,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TechTalk.SpecFlow;
+using System.Web.Script.Serialization;
 
 namespace RESTSharpFW.Helpers
 {
@@ -135,10 +136,34 @@ namespace RESTSharpFW.Helpers
             var client = new RestClient(url);
 
             var request = new RestRequest(resource, Method.POST);
-            request.AddParameter("grant_type", "client_credentials");
+            //request.AddParameter("grant_type", "client_credentials");
 
             //OAUTH Token
             request.AddParameter("Authorization", "Bearer " + token);
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
+         
+        public static IRestResponse POSTOAUTHHeaderToken(string url, string resource, 
+            string token, string body)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource, Method.POST);
+
+            //OAUTH Token
+            request.AddHeader("Authorization", "Bearer " + token);
+            request.AddHeader("Content-type", "application/json");
+
+            var jBody = GetJSONStringFromFile(body);
+
+            //Add Body
+            request.AddParameter("application/json; charset=utf-8", 
+                jBody, ParameterType.RequestBody);
 
             // execute the request
             IRestResponse response = client.Execute(request);
@@ -203,6 +228,7 @@ namespace RESTSharpFW.Helpers
         {
             response.Content.Should().NotBeNullOrEmpty();
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.Created);
+            response.StatusDescription.Should().Be("Created");
         }
 
         public static void Is202AcceptedResponse(IRestResponse response)
@@ -280,6 +306,25 @@ namespace RESTSharpFW.Helpers
             //Parse the JSON response to a JObject
             JObject jobjReturnedFromAPI = JObject.Parse(ScenarioContext.Current.Get<string>(JSONFromAPI));
 
+            JToken.DeepEquals(jobjReturnedFromAPI, GetJSONBodyFromFile(JSONFile))
+                .Should().BeTrue();
+        }
+
+        public static void ContainsJSON(string JSONFromAPI, string JSONFile)
+        {
+            //write the response JSON to the Console
+            Console.WriteLine(ScenarioContext.Current.Get<string>(JSONFromAPI));
+
+            //Parse the JSON response to a JObject
+            JObject jobjReturnedFromAPI = JObject.Parse(ScenarioContext.Current.Get<string>(JSONFromAPI));
+
+            
+            JObject.DeepEquals(jobjReturnedFromAPI, GetJSONBodyFromFile(JSONFile))
+                .Should().BeTrue();
+        }
+
+        public static JObject GetJSONBodyFromFile(string JSONFile)
+        {
             //Parse the JSON file to a JObject
             JObject jobjFromJSONFile;
 
@@ -291,7 +336,23 @@ namespace RESTSharpFW.Helpers
                 jobjFromJSONFile = JObject.Load(reader);
             }
 
-            JToken.DeepEquals(jobjReturnedFromAPI, jobjFromJSONFile).Should().BeTrue();
+            return jobjFromJSONFile;
+        }
+
+        public static JObject GetJSONStringFromFile(string JSONFile)
+        {
+            //Parse the JSON file to a JObject
+            JObject jobjFromJSONFile;
+
+            var dir = Environment.CurrentDirectory;
+
+            using (var sr = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"..\\RESTSharpFW\\JSONFiles\\", JSONFile)))
+            {
+                var reader = new JsonTextReader(sr);
+                jobjFromJSONFile = JObject.Load(reader);
+            }
+
+            return jobjFromJSONFile;
         }
     }
 }
