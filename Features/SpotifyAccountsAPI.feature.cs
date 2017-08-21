@@ -95,6 +95,90 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
+    [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
+    public partial class SpotifyAccountsAPIFeature_MsTest
+    {
+        
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+#line 1 "SpotifyAccountsAPI.feature"
+#line hidden
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
+        public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SpotifyAccountsAPI", "\tIn order to get API Tokens\r\n\tAs a Spotify API user\r\n\tI want to be able to use th" +
+                    "e Accounts API to get Authorization Tokens", ProgrammingLanguage.CSharp, ((string[])(null)));
+            testRunner.OnFeatureStart(featureInfo);
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.ClassCleanupAttribute()]
+        public static void FeatureTearDown()
+        {
+            testRunner.OnFeatureEnd();
+            testRunner = null;
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute()]
+        public virtual void TestInitialize()
+        {
+            if (((testRunner.FeatureContext != null) 
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "SpotifyAccountsAPI")))
+            {
+                global::RESTSharpFW.Features.SpotifyAccountsAPIFeature_MsTest.FeatureSetup(null);
+            }
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute()]
+        public virtual void ScenarioTearDown()
+        {
+            testRunner.OnScenarioEnd();
+        }
+        
+        public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        {
+            testRunner.OnScenarioStart(scenarioInfo);
+        }
+        
+        public virtual void ScenarioCleanup()
+        {
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Accounts API Returns OAuth Token")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpotifyAccountsAPI")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("Accounts")]
+        public virtual void AccountsAPIReturnsOAuthToken()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts API Returns OAuth Token", new string[] {
+                        "Accounts"});
+#line 7
+this.ScenarioSetup(scenarioInfo);
+#line 8
+ testRunner.Given("I get a valid token back from the Accounts API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Accounts API GET OAUTH for doing stuff")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "SpotifyAccountsAPI")]
+        public virtual void AccountsAPIGETOAUTHForDoingStuff()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts API GET OAUTH for doing stuff", ((string[])(null)));
+#line 11
+this.ScenarioSetup(scenarioInfo);
+#line 12
+ testRunner.Given("I get an OAuth Token from the Accounts API", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+    }
 }
 #pragma warning restore
 #endregion

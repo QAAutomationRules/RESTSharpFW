@@ -330,7 +330,7 @@ namespace RESTSharpFW.Helpers
 
             var dir = Environment.CurrentDirectory;
 
-            using (var sr = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"..\\RESTSharpFW\\JSONFiles\\", JSONFile)))
+            using (var sr = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"JSONFiles/", JSONFile)))
             {
                 var reader = new JsonTextReader(sr);
                 jobjFromJSONFile = JObject.Load(reader);
