@@ -40,6 +40,16 @@ namespace RESTSharpFW.Steps
 
         }
 
+        [Then(@"I capture the New Playlist ID")]
+        public void ThenICaptureTheNewPlaylistID()
+        {
+            var jobj = RESTHelpers.GetJObject(ScenarioContext.Current.Get<string>("PlayListJSONResponse"));
+
+
+            ScenarioContext.Current.Set<string>(jobj.GetValue("id").ToString(), "NewPlaylistID");
+        }
+
+
 
     }
 }

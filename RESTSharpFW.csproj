@@ -117,6 +117,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>POSTNewPlayList.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\PUTPlaylistDetails.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PUTPlaylistDetails.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\SpotifyAccountsAPI.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +136,7 @@
     <Compile Include="Steps\GETNewReleasesSteps.cs" />
     <Compile Include="Steps\GETTracksSteps.cs" />
     <Compile Include="Steps\POSTNewPlaylistSteps.cs" />
+    <Compile Include="Steps\PUTPlaylistDetailsSteps.cs" />
     <Compile Include="Steps\SpotifyAPISteps.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +165,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>POSTNewPlayList.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\PUTPlaylistDetails.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PUTPlaylistDetails.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\SpotifyAccountsAPI.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>SpotifyAccountsAPI.feature.cs</LastGenOutput>
@@ -175,10 +185,16 @@
     <None Include="JSONFiles\NewReleases.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="JSONFiles\PlayListJSONResponse.json">
+    <None Include="JSONFiles\PUTPlayListJSONResponse.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSONFiles\POSTPlayListJSONResponse.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="JSONFiles\POSTPlayListNOTPublicJSON.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSONFiles\PUTPlayListPublicJSON.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="JSONFiles\POSTPlayListPublicJSON.json">

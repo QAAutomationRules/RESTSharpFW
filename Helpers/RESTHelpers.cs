@@ -90,6 +90,33 @@ namespace RESTSharpFW.Helpers
 
         }
 
+        public static IRestResponse PUTPlaylistWithAuthHeader(string url, string resource,
+            string token, string body)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource, Method.POST);
+
+            //OAUTH Token
+            request.AddHeader("Authorization", "Bearer " + token);
+            request.AddHeader("Content-type", "application/json");
+            
+            //add Playlist ID as Query Parameter
+            request.AddQueryParameter("PlaylistID", ScenarioContext.Current.Get<string>("NewPlaylistID"));
+
+            var jBody = GetJSONStringFromFile(body);
+
+            //Add Body
+            request.AddParameter("application/json; charset=utf-8",
+                jBody, ParameterType.RequestBody);
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
+
         public static IRestResponse POST(string url, string resource,
             string clientID = "", string clientSecret = "")
         {
@@ -339,6 +366,15 @@ namespace RESTSharpFW.Helpers
             return jobjFromJSONFile;
         }
 
+        public static JObject GetJObject(string json)
+        {
+            
+            var jobjFromJSON = JObject.Parse(json); 
+            
+
+            return jobjFromJSON;
+        }
+
         public static JObject GetJSONStringFromFile(string JSONFile)
         {
             //Parse the JSON file to a JObject
@@ -346,7 +382,7 @@ namespace RESTSharpFW.Helpers
 
             var dir = Environment.CurrentDirectory;
 
-            using (var sr = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"..\\RESTSharpFW\\JSONFiles\\", JSONFile)))
+            using (var sr = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"JSONFiles/", JSONFile)))
             {
                 var reader = new JsonTextReader(sr);
                 jobjFromJSONFile = JObject.Load(reader);

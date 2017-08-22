@@ -81,7 +81,6 @@ C:\RESTY\RESTSharpFW\bin\Debug\FluentAssertions.Core.xml
 C:\RESTY\RESTSharpFW\bin\Debug\Newtonsoft.Json.xml
 C:\RESTY\RESTSharpFW\bin\Debug\RestSharp.xml
 C:\RESTY\RESTSharpFW\bin\Debug\de-DE\Faker.NET4.resources.dll
-C:\RESTY\RESTSharpFW\obj\Debug\RESTSharpFW.csprojResolveAssemblyReference.cache
 C:\RESTY\RESTSharpFW\obj\Debug\RESTSharpFW.csproj.CoreCompileInputs.cache
 C:\RESTY\RESTSharpFW\obj\Debug\RESTSharpFW.dll
 C:\RESTY\RESTSharpFW\obj\Debug\RESTSharpFW.pdb
@@ -89,7 +88,10 @@ C:\RESTY\RESTSharpFW\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFrame
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\AlbumsJSON.json
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\ArtistsJSON.json
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\CategoriesJSON.json
-C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\PlayListJSONResponse.json
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\POSTPlayListNOTPublicJSON.json
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\POSTPlayListPublicJSON.json
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\TracksJSON.json
+C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\PUTPlayListPublicJSON.json
+C:\RESTY\RESTSharpFW\obj\Debug\RESTSharpFW.csprojResolveAssemblyReference.cache
+C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\PUTPlayListJSONResponse.json
+C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\POSTPlayListJSONResponse.json
