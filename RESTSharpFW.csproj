@@ -92,6 +92,11 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Data\AccessToken.cs" />
+    <Compile Include="Features\DeleteTracksFromPlaylist.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteTracksFromPlaylist.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\GETAlbums.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,10 +136,12 @@
     <Compile Include="Hooks\Hooks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\AccountsAPISteps.cs" />
+    <Compile Include="Steps\DELETETrackFromPlaylist.cs" />
     <Compile Include="Steps\GETAlbumsSteps.cs" />
     <Compile Include="Steps\GETCategoriesSteps.cs" />
     <Compile Include="Steps\GETNewReleasesSteps.cs" />
     <Compile Include="Steps\GETTracksSteps.cs" />
+    <Compile Include="Steps\POSTAddTrackToPlaylistSteps.cs" />
     <Compile Include="Steps\POSTNewPlaylistSteps.cs" />
     <Compile Include="Steps\PUTPlaylistDetailsSteps.cs" />
     <Compile Include="Steps\SpotifyAPISteps.cs" />
@@ -145,6 +152,10 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Default.srprofile" />
+    <None Include="Features\DeleteTracksFromPlaylist.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteTracksFromPlaylist.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\GETAlbums.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GETAlbums.feature.cs</LastGenOutput>
@@ -185,6 +196,9 @@
     <None Include="JSONFiles\NewReleases.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="JSONFiles\POSTPlayListTrackJSON.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="JSONFiles\PUTPlayListJSONResponse.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -198,6 +212,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="JSONFiles\POSTPlayListPublicJSON.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="JSONFiles\DELETETrackFromPlaylist.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="JSONFiles\TracksJSON.json">

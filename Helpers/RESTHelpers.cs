@@ -61,6 +61,22 @@ namespace RESTSharpFW.Helpers
 
         }
 
+        public static IRestResponse GETPlaylist(string url, string resource,
+            string token)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource + "/" + ScenarioContext.Current.Get<string>("NewPlaylistID"), Method.GET);
+
+            request.AddHeader("Authorization", "Bearer " + token);
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
+
         public static IRestResponse PUTNoAuth(string url, string resource, string body)
         {
             var client = new RestClient(url);
@@ -199,6 +215,28 @@ namespace RESTSharpFW.Helpers
 
         }
 
+        public static IRestResponse POSTAddTracksToPlaylist(string url, string resource,
+            string token)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource + "/" + ScenarioContext.Current.Get<string>("NewPlaylistID") + "/tracks", Method.POST);
+
+            //OAUTH Token
+            request.AddHeader("Authorization", "Bearer " + token);
+            request.AddHeader("Content-type", "application/json");
+
+            request.AddQueryParameter("uris", ConfigurationManager.AppSettings["AddTracksQueryParameters"]);
+
+            
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
+      
+
         public static IRestResponse POSTBasicAuth(string url, string resource, 
             string userName, string password, string body)
         {
@@ -207,6 +245,31 @@ namespace RESTSharpFW.Helpers
 
             var request = new RestRequest(resource, Method.POST);
             request.AddBody(body);
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
+
+        public static IRestResponse DELETETrackFromPlaylist(string url, string resource,
+           string token, string body)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource + "/" + ScenarioContext.Current.Get<string>("NewPlaylistID") + "/tracks", Method.DELETE);
+
+            //OAUTH Token
+            request.AddHeader("Authorization", "Bearer " + token);
+            request.AddHeader("Content-type", "application/json");
+
+            var jBody = GetJSONStringFromFile(body);
+
+            //Add Body
+            request.AddParameter("application/json; charset=utf-8",
+                jBody, ParameterType.RequestBody);
+
 
             // execute the request
             IRestResponse response = client.Execute(request);

@@ -95,3 +95,5 @@ C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\PUTPlayListPublicJSON.json
 C:\RESTY\RESTSharpFW\obj\Debug\RESTSharpFW.csprojResolveAssemblyReference.cache
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\PUTPlayListJSONResponse.json
 C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\POSTPlayListJSONResponse.json
+C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\POSTPlayListTrackJSON.json
+C:\RESTY\RESTSharpFW\bin\Debug\JSONFiles\DELETETrackFromPlaylist.json
