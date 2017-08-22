@@ -18,6 +18,19 @@ namespace RESTSharpFW.Helpers
     public class RESTHelpers
     {
 
+        public static IRestResponse OPTIONSNoAuth(string url, string resource)
+        {
+            var client = new RestClient(url);
+
+            var request = new RestRequest(resource, Method.OPTIONS);
+
+            // execute the request
+            IRestResponse response = client.Execute(request);
+
+            return response;
+
+        }
+
         public static IRestResponse GETNoAuth(string url, string resource)
         {
             var client = new RestClient(url);
@@ -306,8 +319,15 @@ namespace RESTSharpFW.Helpers
 
         }
 
+        
+        public static void Is200OKResponseNoContent(IRestResponse response)
+        {
+            response.Content.Should().BeEmpty();
+            response.StatusDescription.Should().Be("OK");
+            response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
+        }
 
-        public static void IsValidOKResponse(IRestResponse response)
+        public static void Is200OKResponse(IRestResponse response)
         {
             response.Content.Should().NotBeNullOrEmpty();
             response.StatusDescription.Should().Be("OK");

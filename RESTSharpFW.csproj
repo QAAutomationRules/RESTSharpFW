@@ -92,10 +92,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Data\AccessToken.cs" />
-    <Compile Include="Features\DeleteTracksFromPlaylist.feature.cs">
+    <Compile Include="Features\DELETETracksFromPlaylist1.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DeleteTracksFromPlaylist.feature</DependentUpon>
+      <DependentUpon>DELETETracksFromPlaylist.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\GETAlbums.feature.cs">
       <AutoGen>True</AutoGen>
@@ -116,6 +116,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GETTracks.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\OPTIONSSpotifyAPI.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OPTIONSSpotifyAPI.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\POSTNewPlayList.feature.cs">
       <AutoGen>True</AutoGen>
@@ -141,6 +146,7 @@
     <Compile Include="Steps\GETCategoriesSteps.cs" />
     <Compile Include="Steps\GETNewReleasesSteps.cs" />
     <Compile Include="Steps\GETTracksSteps.cs" />
+    <Compile Include="Steps\OPTIONSSteps.cs" />
     <Compile Include="Steps\POSTAddTrackToPlaylistSteps.cs" />
     <Compile Include="Steps\POSTNewPlaylistSteps.cs" />
     <Compile Include="Steps\PUTPlaylistDetailsSteps.cs" />
@@ -152,9 +158,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Default.srprofile" />
-    <None Include="Features\DeleteTracksFromPlaylist.feature">
+    <None Include="Features\DELETETracksFromPlaylist.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DeleteTracksFromPlaylist.feature.cs</LastGenOutput>
+      <LastGenOutput>DELETETracksFromPlaylist1.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\GETAlbums.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
@@ -171,6 +177,10 @@
     <None Include="Features\GETTracks.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>GETTracks.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\OPTIONSSpotifyAPI.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>OPTIONSSpotifyAPI.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\POSTNewPlayList.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

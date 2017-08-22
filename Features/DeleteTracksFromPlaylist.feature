@@ -1,10 +1,10 @@
-﻿Feature: Delete Tracks From Playlist
+﻿Feature: DELETE Tracks From Playlist
 	
 	As a Spotify API Consumer
-	I want to be able to Delete Tracks from a playlist
+	I want to be able to DELETE Tracks from a playlist
 
 @DELETE
-Scenario: Delete track from Playlist
+Scenario: DELETE track from Playlist
 	Given I have a URL to the Spotify API
     When I POST a New Playlist to the Spotify API
 	Then I capture the New Playlist ID

@@ -23,7 +23,7 @@ namespace RESTSharpFW.Steps
               "DELETETrackFromPlaylist.json"
               );
 
-            RESTHelpers.IsValidOKResponse(response);
+            RESTHelpers.Is200OKResponse(response);
 
             ScenarioContext.Current.Add("DELETEPlayListTracksJSONResponse", response.Content);
         }
@@ -37,7 +37,7 @@ namespace RESTSharpFW.Steps
               ConfigurationManager.AppSettings["ModifyToken"]
               );
 
-            RESTHelpers.IsValidOKResponse(response);
+            RESTHelpers.Is200OKResponse(response);
 
             response.Content.Contains("4iV5W9uYEdYUVa79Axb7Rh").Should().BeFalse();
 

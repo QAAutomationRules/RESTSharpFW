@@ -22,7 +22,7 @@ namespace RESTSharpFW.Steps
                ConfigurationManager.AppSettings["CategoriesResource"].ToString(),
                ScenarioContext.Current.Get<string>("AccountToken"));
 
-            RESTHelpers.IsValidOKResponse(response);
+            RESTHelpers.Is200OKResponse(response);
 
             ScenarioContext.Current.Add("CategoriesJSON", response.Content);
         }

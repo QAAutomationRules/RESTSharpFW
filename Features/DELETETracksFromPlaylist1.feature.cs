@@ -17,20 +17,20 @@ namespace RESTSharpFW.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("Delete Tracks From Playlist", Description="\tAs a Spotify API Consumer\r\n\tI want to be able to Delete Tracks from a playlist", SourceFile="Features\\DeleteTracksFromPlaylist.feature", SourceLine=0)]
-    public partial class DeleteTracksFromPlaylistFeature
+    [TechTalk.SpecRun.FeatureAttribute("DELETE Tracks From Playlist", Description="\tAs a Spotify API Consumer\r\n\tI want to be able to DELETE Tracks from a playlist", SourceFile="Features\\DELETETracksFromPlaylist.feature", SourceLine=0)]
+    public partial class DELETETracksFromPlaylistFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "DeleteTracksFromPlaylist.feature"
+#line 1 "DELETETracksFromPlaylist.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Delete Tracks From Playlist", "\tAs a Spotify API Consumer\r\n\tI want to be able to Delete Tracks from a playlist", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DELETE Tracks From Playlist", "\tAs a Spotify API Consumer\r\n\tI want to be able to DELETE Tracks from a playlist", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -61,11 +61,11 @@ namespace RESTSharpFW.Features
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Delete track from Playlist", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("DELETE track from Playlist", new string[] {
                 "DELETE"}, SourceLine=6)]
-        public virtual void DeleteTrackFromPlaylist()
+        public virtual void DELETETrackFromPlaylist()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete track from Playlist", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("DELETE track from Playlist", new string[] {
                         "DELETE"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
@@ -95,19 +95,19 @@ this.ScenarioSetup(scenarioInfo);
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class DeleteTracksFromPlaylistFeature_MsTest
+    public partial class DELETETracksFromPlaylistFeature_MsTest
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "DeleteTracksFromPlaylist.feature"
+#line 1 "DELETETracksFromPlaylist.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Delete Tracks From Playlist", "\tAs a Spotify API Consumer\r\n\tI want to be able to Delete Tracks from a playlist", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DELETE Tracks From Playlist", "\tAs a Spotify API Consumer\r\n\tI want to be able to DELETE Tracks from a playlist", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -122,9 +122,9 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void TestInitialize()
         {
             if (((testRunner.FeatureContext != null) 
-                        && (testRunner.FeatureContext.FeatureInfo.Title != "Delete Tracks From Playlist")))
+                        && (testRunner.FeatureContext.FeatureInfo.Title != "DELETE Tracks From Playlist")))
             {
-                global::RESTSharpFW.Features.DeleteTracksFromPlaylistFeature_MsTest.FeatureSetup(null);
+                global::RESTSharpFW.Features.DELETETracksFromPlaylistFeature_MsTest.FeatureSetup(null);
             }
         }
         
@@ -145,12 +145,12 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Delete track from Playlist")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Delete Tracks From Playlist")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("DELETE track from Playlist")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "DELETE Tracks From Playlist")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("DELETE")]
-        public virtual void DeleteTrackFromPlaylist()
+        public virtual void DELETETrackFromPlaylist()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete track from Playlist", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("DELETE track from Playlist", new string[] {
                         "DELETE"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
