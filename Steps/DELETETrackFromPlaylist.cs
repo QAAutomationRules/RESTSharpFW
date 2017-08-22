@@ -39,7 +39,7 @@ namespace RESTSharpFW.Steps
 
             RESTHelpers.Is200OKResponse(response);
 
-            response.Content.Contains("4iV5W9uYEdYUVa79Axb7Rh").Should().BeFalse();
+            response.Content.Contains(ConfigurationManager.AppSettings["DeleteTrackID"]).Should().BeFalse();
 
         }
 

@@ -15,9 +15,10 @@ namespace RESTSharpFW.Steps
         [When(@"I execute the GET Albums request")]
         public void WhenIExecuteTheGETAlbumsRequest()
         {
-            IRestResponse response = RESTHelpers.GETWithOAUTH(ConfigurationManager.AppSettings["SpotifyURL"].ToString(),
-               ConfigurationManager.AppSettings["AlbumsResource"].ToString(),
-               ScenarioContext.Current.Get<string>("AccountToken"));
+            IRestResponse response = RESTHelpers.GETWithOAUTH(
+                ConfigurationManager.AppSettings["SpotifyURL"].ToString(),
+                ConfigurationManager.AppSettings["AlbumsResource"].ToString(),
+                ScenarioContext.Current.Get<string>("AccountToken"));
 
             RESTHelpers.Is200OKResponse(response);
 
